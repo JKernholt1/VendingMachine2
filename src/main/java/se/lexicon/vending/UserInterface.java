@@ -240,7 +240,7 @@ public class UserInterface {
 
         System.out.println("\nBefore you head back to the hotel, you also take whatever items you didn't eat or drink and");
         System.out.println("put them in your spacious backpack.");
-        System.out.println("Carpe noctum. End of vending machine program...");
+        System.out.println("Carpe noctem. End of vending machine program...");
 
     }//main
 
