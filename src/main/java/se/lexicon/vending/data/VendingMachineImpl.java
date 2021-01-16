@@ -76,7 +76,8 @@ public class VendingMachineImpl implements VendingMachine {
     @Override
     public boolean addMoney(int money) {        //done
         moneyPool = money;
-        return true;
+
+        return false;
     }
 
     @Override           //done
@@ -127,7 +128,7 @@ public class VendingMachineImpl implements VendingMachine {
 
     @Override          //done
     public int returnChange() {
-        System.out.println("You get " + moneyPool + " back from the vending machine as you check out from it.");
+        System.out.println("You get " + moneyPool + " credits back from the vending machine as you check out from it.");
         moneyPool = 0;
         return 0;
     }
