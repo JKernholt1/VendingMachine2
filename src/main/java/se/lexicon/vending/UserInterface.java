@@ -56,9 +56,11 @@ public class UserInterface {
             int choice2 = chooser2.nextInt();
             int indexValue = Arrays.binarySearch(credChoices, choice2);
 
-            if (indexValue > -0.4) {
 
-                switch (choice2) {
+            if (indexValue > -1) {
+
+
+                switch (indexValue) {
                     case 0:
                         int money = vending1.getMoneyPool();
                         money = money +1;
