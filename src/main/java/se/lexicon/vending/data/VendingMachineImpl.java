@@ -7,15 +7,14 @@ public class VendingMachineImpl implements VendingMachine {
     /*  Q's and statements:
     1. I'm not going to use the variable "money" for more than the initial direct touch of the denominations.
         I'd much rather use the moneyPool for purchases since the use of the variable "money" is just for ADDING "money".
-    2. "Product[] products" creates the abstract class products, but doesn't really do anything else I guess...?
-    3. yes, I know arrays starts with index 0, but I wanted a "0" if there would be an emergency use with products1,
+    2. yes, I know arrays starts with index 0, but I wanted a "0" if there would be an emergency use with products1,
         and that's why it has a length of 5.
 
 
 
     */
 
-    private Product[] products;
+    private Product[] products = new Product[4];
     private int[] denominations = {1, 2, 5, 10, 20, 50, 100, 200, 500, 1000};
 
 
@@ -28,7 +27,7 @@ public class VendingMachineImpl implements VendingMachine {
     public Snack snack1 = new Snack();
 
 
-    public void vendingMachineImpl1() {      //done
+    public VendingMachineImpl() {      //done
 
         drink1.setName("Mer");
         drink1.setPrice(8);
@@ -45,6 +44,11 @@ public class VendingMachineImpl implements VendingMachine {
         snack1.setName("Japp");
         snack1.setPrice(7);
         snack1.setSugarPercent(30);
+        products[0] = drink1;
+        products[1] = food1;
+        products[2] = fruit1;
+        products[3] = snack1;
+
 
     }//vendingMachineImpl1
 
@@ -60,43 +64,45 @@ public class VendingMachineImpl implements VendingMachine {
         moneyPool = money;
     }
 
-    public int[] getProducts1() {
+/*    public int[] getProducts1() {
         return products1;
     }
 
     public void setProducts1(int[] products2) {
         products1 = products2;
     }
+*/
 
     @Override
     public boolean addMoney(int money) {        //done
-        moneyPool = moneyPool + money;
-        System.out.println("You added " + money + " credits to your vending machine wallet, which raised it to " + moneyPool + " credits.");
+        moneyPool = money;
         return true;
     }
 
     @Override           //done
-    public int[] productBuy(int prodNum, int products1[], int moneyPool) {
+    public Product productBuy(int prodNum) {
+        int cash;
+        for (int i = 0; i < 4; i++){
 
-        if (prodNum == 1) {
-            drink1.productPurchase(products1, moneyPool);
-            return products1;
-        } else if (prodNum == 2) {
-            food1.productPurchase(products1, moneyPool);
-            return products1;
-        } else if (prodNum == 3) {
-            fruit1.productPurchase(products1, moneyPool);
-            return products1;
-        } else if (prodNum == 4) {
-            snack1.productPurchase(products1, moneyPool);
-            return products1;
-            } else {
-                System.out.println("Error, product does not exist.");
+         if (i == prodNum-1){
+            cash = products[i].getPrice();
+            if (cash > moneyPool){
+                System.out.println("You haven't put enough money into the vending machine to buy that product.");
+            }   else{
+                moneyPool = moneyPool - cash;
+                System.out.println("You bought a " + products[i].getName());
+                products[i].use();
             }
-        return products1;
-    }
 
-    public int[] productUse(int prodNum, int products1[]){
+         } else {}//else
+
+        }//for                                // for loop statement
+                                            // search product from array of product
+                                            // return found product
+        return null;
+    }//productBuy
+
+   /* public int[] productUse(int prodNum, int products1[]){
 
         if (prodNum == 1) {
             drink1.use(products1);
@@ -117,6 +123,7 @@ public class VendingMachineImpl implements VendingMachine {
         return products1;
     }
 
+    */
 
     @Override          //done
     public int returnChange() {
@@ -134,7 +141,6 @@ public class VendingMachineImpl implements VendingMachine {
         System.out.println(snack1.examine());
 
     }
-
 
     @Override       //done
     public int getBalance() {

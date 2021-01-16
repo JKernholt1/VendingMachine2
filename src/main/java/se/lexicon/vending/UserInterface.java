@@ -12,7 +12,6 @@ public class UserInterface {
     public static void main(String[] args) {
 
         VendingMachineImpl vending1 = new VendingMachineImpl();
-        vending1.vendingMachineImpl1();
 
         System.out.println("During the end of your tourist city stroll, you encounter a vending machine.");
         System.out.println("You decide to at least have a look, and walk over to it.");
@@ -26,7 +25,7 @@ public class UserInterface {
         Scanner chooser1 = new Scanner(System.in);
         Scanner chooser2 = new Scanner(System.in);
         Scanner chooser3 = new Scanner(System.in);
-        Scanner chooser4 = new Scanner(System.in);
+//        Scanner chooser4 = new Scanner(System.in);
 //----
         int choice1 = chooser1.nextInt();
 //------------------------------------------------
@@ -53,6 +52,7 @@ public class UserInterface {
 //-----------------
         while (creditStuffing) {
 
+            boolean transaction = false;
             int choice2 = chooser2.nextInt();
             int indexValue = Arrays.binarySearch(credChoices, choice2);
 
@@ -60,84 +60,123 @@ public class UserInterface {
 
                 switch (choice2) {
                     case 0:
-                        int money = vending1.getMoneyPool() + 1;
-                        vending1.addMoney(money);
-                        System.out.println("+1 credit added to your vending machine credit pool.");
-                        System.out.println("Total amount of vending machine's credit pool is now: " + money + " credits.\n");
-                        System.out.println("\"Enter more credits?\" (1, 2, 5, 10, 20, 50, 100, 200, 500 or 1000 - or other input to stop.)");
+                        int money = vending1.getMoneyPool();
+                        money = money +1;
+                        transaction = vending1.addMoney(money);
+                        if (transaction) {
+                            System.out.println("+1 credit added to your vending machine credit pool.");
+                            System.out.println("Total amount of vending machine's credit pool is now: " + money + " credits.\n");
+                            System.out.println("\"Enter more credits?\" (1, 2, 5, 10, 20, 50, 100, 200, 500 or 1000 - or other input to stop.)");
+                        } else {
+                            System.out.println("No money were put into the vending machine.");}
                         break;
 
                     case 1:
-                        money = vending1.getMoneyPool() + 2;
+                        money = vending1.getMoneyPool();
+                        money = money +2;
                         vending1.addMoney(money);
+                        if (transaction) {
                         System.out.println("+2 credits added to your vending machine credit pool.");
                         System.out.println("Total amount of vending machine's credit pool is now: " + money + " credits.\n");
                         System.out.println("\"Enter more credits?\" (1, 2, 5, 10, 20, 50, 100, 200, 500 or 1000 - or other input to stop.)");
+                        } else {
+                            System.out.println("No money were put into the vending machine.");}
                         break;
 
                     case 2:
-                        money = vending1.getMoneyPool() + 5;
+                        money = vending1.getMoneyPool();
+                        money = money +5;
                         vending1.addMoney(money);
+                        if (transaction) {
                         System.out.println("+5 credits added to your vending machine credit pool.");
                         System.out.println("Total amount of vending machine's credit pool is now: " + money + " credits.\n");
                         System.out.println("\"Enter more credits?\" (1, 2, 5, 10, 20, 50, 100, 200, 500 or 1000 - or other input to stop.)");
+                        } else {
+                            System.out.println("No money were put into the vending machine.");}
                         break;
 
                     case 3:
-                        money = vending1.getMoneyPool() + 10;
+                        money = vending1.getMoneyPool();
+                        money = money +10;
                         vending1.addMoney(money);
+                        if (transaction) {
                         System.out.println("+10 credits added to your vending machine credit pool.");
                         System.out.println("Total amount of vending machine's credit pool is now: " + money + " credits.\n");
                         System.out.println("\"Enter more credits?\" (1, 2, 5, 10, 20, 50, 100, 200, 500 or 1000 - or other input to stop.)");
+                        } else {
+                            System.out.println("No money were put into the vending machine.");}
                         break;
 
                     case 4:
-                        money = vending1.getMoneyPool() + 20;
+                        money = vending1.getMoneyPool();
+                        money = money +20;
                         vending1.addMoney(money);
+                        if (transaction) {
                         System.out.println("+20 credits added to your vending machine credit pool.");
                         System.out.println("Total amount of vending machine's credit pool is now: " + money + " credits.\n");
                         System.out.println("\"Enter more credits?\" (1, 2, 5, 10, 20, 50, 100, 200, 500 or 1000 - or other input to stop.)");
+                        } else {
+                            System.out.println("No money were put into the vending machine.");}
                         break;
 
                     case 5:
-                        money = vending1.getMoneyPool() + 50;
+                        money = vending1.getMoneyPool();
+                        money = money +50;
                         vending1.addMoney(money);
+                        if (transaction) {
                         System.out.println("+50 credits added to your vending machine credit pool.");
                         System.out.println("Total amount of vending machine's credit pool is now: " + money + " credits.\n");
                         System.out.println("\"Enter more credits?\" (1, 2, 5, 10, 20, 50, 100, 200, 500 or 1000 - or other input to stop.)");
+                        } else {
+                            System.out.println("No money were put into the vending machine.");}
                         break;
 
-
                     case 6:
-                        money = vending1.getMoneyPool() + 100;
+                        money = vending1.getMoneyPool();
+                        money = money +100;
                         vending1.addMoney(money);
+                        if (transaction) {
                         System.out.println("+100 credits added to your vending machine credit pool.");
                         System.out.println("Total amount of vending machine's credit pool is now: " + money + " credits.\n");
                         System.out.println("\"Enter more credits?\" (1, 2, 5, 10, 20, 50, 100, 200, 500 or 1000 - or other input to stop.)");
+                        } else {
+                            System.out.println("No money were put into the vending machine.");}
                         break;
 
                     case 7:
-                        money = vending1.getMoneyPool() + 200;
+                        money = vending1.getMoneyPool();
+                        money = money +200;
                         vending1.addMoney(money);
+                        if (transaction) {
                         System.out.println("+200 credits added to your vending machine credit pool.");
                         System.out.println("Total amount of vending machine's credit pool is now: " + money + " credits.\n");
                         System.out.println("\"Enter more credits?\" (1, 2, 5, 10, 20, 50, 100, 200, 500 or 1000 - or other input to stop.)");
+                        } else {
+                            System.out.println("No money were put into the vending machine.");}
                         break;
 
                     case 8:
-                        money = vending1.getMoneyPool() + 500;
+                        money = vending1.getMoneyPool();
+                        money = money +500;
                         vending1.addMoney(money);
+                        if (transaction) {
                         System.out.println("+500 credits added to your vending machine credit pool.");
                         System.out.println("Total amount of vending machine's credit pool is now: " + money + " credits.\n");
                         System.out.println("\"Enter more credits?\" (1, 2, 5, 10, 20, 50, 100, 200, 500 or 1000 - or other input to stop.)");
+                        } else {
+                            System.out.println("No money were put into the vending machine.");}
                         break;
 
                     case 9:
-                        money = vending1.getMoneyPool() + 1000;
+                        money = vending1.getMoneyPool();
+                        money = money +1000;
                         vending1.addMoney(money);
+                        if (transaction) {
                         System.out.println("+1000 credits added to your vending machine credit pool.");
                         System.out.println("Total amount of vending machine's credit pool is now: " + money + " credits.\n");
                         System.out.println("\"Enter more credits?\" (1, 2, 5, 10, 20, 50, 100, 200, 500 or 1000 - or other input to stop.)");
+                        } else {
+                            System.out.println("No money were put into the vending machine.");}
                         break;
 
                 }//switch
@@ -167,19 +206,22 @@ public class UserInterface {
                 case 2:
                 case 3:
                 case 4:
-                    int[] products1 = vending1.getProducts1();
-                    int moneyPool = vending1.getMoneyPool();
-                    int[] prods2 = vending1.productBuy(choice3, products1, moneyPool);
-                    vending1.setProducts1(prods2);
-                    System.out.println("\nWould you like to buy something else? (1-4, or other number to cancel...)");
-                default:
-                    System.out.println("\nYou decide you're done with buying things and ponder if you should start consume");
-                    System.out.println("any of the items you just bought...");
-                    yummy= false;
+                     vending1.productBuy(choice3);
 
+                    System.out.println("\nWould you like to buy something else? (1-4, or other number to cancel...)");
+                    break;
+                default:
+                    System.out.println("\nYou decide you're done with this machine for now and start checking out...");
+                    yummy= false;
+                    break;
             }//switch
         }//while
 
+
+
+
+//---------------- becomes redundant because of insta-eat...  ----------------------------------
+/*
         System.out.println("\n\nNow, which items would you like to consume of the those you might have bought?");
         System.out.println("\"Press: 1 for a drink, 2 for some food, 3 for a fruit or 4 for a snack.\"");
         System.out.println("...or any other number to stop consuming.");
@@ -228,6 +270,9 @@ public class UserInterface {
 
             }//switch
         }//while
+*/
+
+//------------- end of redundant...  -------------------------
 
         int left = vending1.getBalance();
         System.out.println("You check the current balance in the vending machine and it shows: " + left + " credits.");
@@ -238,8 +283,11 @@ public class UserInterface {
         left = vending1.getBalance();
         System.out.println("You check the current balance in the vending machine again and it shows: " + left + " credits.");
 
-        System.out.println("\nBefore you head back to the hotel, you also take whatever items you didn't eat or drink and");
-        System.out.println("put them in your spacious backpack.");
+//------------- since no back pack anymore.... well
+//        System.out.println("\nBefore you head back to the hotel, you also take whatever items you didn't eat or drink and");
+//        System.out.println("put them in your spacious backpack.");
+//-------------
+
         System.out.println("Carpe noctem. End of vending machine program...");
 
     }//main

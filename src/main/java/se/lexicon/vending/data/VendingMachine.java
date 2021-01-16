@@ -10,7 +10,7 @@ public interface VendingMachine {
 
 
 
-    public int[] productBuy(int prodNum, int products1[], int moneyPool);
+    Product productBuy(int prodNum);
 
     int returnChange();
 

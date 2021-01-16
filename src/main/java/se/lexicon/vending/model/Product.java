@@ -21,10 +21,9 @@ public abstract class Product {
 
     // abstract method is a method that has no implementation or without body
     // using abstract keyword all subclasses must implement this method and override them
-    public abstract int[] productPurchase(int products1[], int moneyPool);
 
 
-    public abstract void use(int products1[]);
+    public abstract void use();
 
 
 
