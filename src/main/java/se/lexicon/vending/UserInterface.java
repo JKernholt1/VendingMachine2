@@ -52,7 +52,7 @@ public class UserInterface {
 //-----------------
         while (creditStuffing) {
 
-            boolean transaction = false;
+            boolean transaction = true;
             int choice2 = chooser2.nextInt();
             int indexValue = Arrays.binarySearch(credChoices, choice2);
 
@@ -65,7 +65,7 @@ public class UserInterface {
                         int money = vending1.getMoneyPool();
                         money = money +1;
                         transaction = vending1.addMoney(money);
-                        if (transaction) {
+                        if (transaction == false) {
                             System.out.println("+1 credit added to your vending machine credit pool.");
                             System.out.println("Total amount of vending machine's credit pool is now: " + money + " credits.\n");
                             System.out.println("\"Enter more credits?\" (1, 2, 5, 10, 20, 50, 100, 200, 500 or 1000 - or other input to stop.)");
